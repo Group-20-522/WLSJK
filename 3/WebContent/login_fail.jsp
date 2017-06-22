@@ -31,7 +31,7 @@
 <body  onload="returnUrlByTime()">
 	<div class="page">
 	<div class="loginwarrp">
-		<div class="logo">账号注册成功</div>
+		<div class="logo">登录失败，信息有误</div>
         
 	</div>
 	

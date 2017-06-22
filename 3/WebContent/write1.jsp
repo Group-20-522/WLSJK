@@ -15,9 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
-    <!-- 
-    <link rel="stylesheet" type="text/css" href="styles.css"> 
-    -->  
+
       
     <script   Language="javaScript">   
 		function   validate()   
@@ -71,6 +69,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>  
     
   <body>  
+  <%
+	String kaoshenghao = request.getParameter("kaoshenghao");
+%>
+
+  
   <div id="blog-news">
    <embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf" quality="high" bgcolor="#ffffff" width="160" height="70" name="honehoneclock" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
    </div>
@@ -79,6 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div id="hd_cnt">
 <div class="list_hdcnt">
  <form id="add_user" name="add_user" action="inServlet1" method="post"  onsubmit="return validate()">
+
 			  <table width="100%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
                 <tbody>
                

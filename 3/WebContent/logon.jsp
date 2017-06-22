@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="loginwarrp">
 		<div class="logo">考生账号注册</div>
         <div class="login_form">
-			<form id="Login" name="myform" method="post" onsubmit="return validate()" action="">
+			<form id="Login" name="myform" method="post" onsubmit="return validate()" action="logon_inServlet">
 				<li class="login-item">
 					<span>身份证号：</span>
 					<input type="text" id="username" name="Username" class="login_input" >

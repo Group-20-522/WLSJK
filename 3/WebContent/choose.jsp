@@ -15,9 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
-    <!-- 
-    <link rel="stylesheet" type="text/css" href="styles.css"> 
-    -->  
+ 
       
     
   </head>  
@@ -27,7 +25,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h1 align="center">报 考 科 目 选 择</h1>  
     <hr/>
       
-    
+<%  
+	//String kaoshenghao = (String)request.getAttribute("kaoshenghao");
+String kaoshenghao = "百事可乐";
+%>
         
         
         <fieldset>
@@ -36,17 +37,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<tbody><tr class="datelisthead">
 				<td>序号</td><td>名称</td><td></td><td></td><td></td><td></td><td></td><td>操作</td></tr>
 				<tr>
-				<td>1</td><td>英 语 四 级 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write1.jsp">报 名</a></td>
+				<td>1</td><td>英 语 四 级 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write1.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td>
 				</tr>
 				<tr>
 				<tr>
-				<td>2</td><td>超 级 机 构 地 质 专 业 研 究 生 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write3.jsp">报 名</a></td>
+				<td>2</td><td>超 级 机 构 地 质 专 业 研 究 生 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write3.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td>
 				</tr>
 				<tr>
-				<td>3</td><td>全 国 计 算 机 等 级 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write4.jsp">报 名</a></td>
+				<td>3</td><td>全 国 计 算 机 等 级 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write4.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td>
 				</tr>
 				<tr>
-				<td>4</td><td>全 国 会 计 资 格 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write5.jsp">报 名</a></td>
+				<td>4</td><td>全 国 会 计 资 格 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write5.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td>
 				</tr>
 				<tr>
 				

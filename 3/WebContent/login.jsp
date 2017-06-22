@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				<div class="clearfix"></div>
 				<li class="login-sub">
-					<input type="submit" name="Submit" value="登录" />
+					<input align="center" type="submit" name="Submit" value="登录" />
                     <input type="button" name="Reset" value="注册" onclick="window.location.href='logon.jsp'"/>
 				</li>  
 				<li class="login-tiao">

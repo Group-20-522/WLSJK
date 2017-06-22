@@ -80,6 +80,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
   <body>  
   
+<%
+	String kaoshenghao = request.getParameter("kaoshenghao");
+%>
   
   
   <div id="blog-news">
