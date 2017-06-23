@@ -29,6 +29,10 @@ public class outServlet4 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		String kaoshenghao = (String) request.getParameter("kaoshenghao");
+		
+		
 		RequestDispatcher rd = request.getRequestDispatcher("outwrite4.jsp");
         String name = "史迪仔";
      	String sex = "男";
@@ -59,6 +63,9 @@ public class outServlet4 extends HttpServlet {
      	
      	
         request.setAttribute("name",name);//存值
+        
+        request.setAttribute("kaoshenghao",kaoshenghao);
+        
         request.setAttribute("sex",sex);
         request.setAttribute("year",year);
         request.setAttribute("month",month);

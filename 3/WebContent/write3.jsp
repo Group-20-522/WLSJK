@@ -15,13 +15,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
-    <!-- 
-    <link rel="stylesheet" type="text/css" href="styles.css"> 
-    -->  
+
       
       
       
-          <script   Language="javaScript">   
+ <script   Language="javaScript">   
 		function   validate()   
 		{   
 				if (add_user.studentname.value=="")   
@@ -66,8 +64,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>  
     
   <body>  
- <%
+<%
 	String kaoshenghao = request.getParameter("kaoshenghao");
+  	session.setAttribute("testSession",kaoshenghao);
 %>
   
   <div id="blog-news">

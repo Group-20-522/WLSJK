@@ -27,7 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
 <%  
 	//String kaoshenghao = (String)request.getAttribute("kaoshenghao");
-String kaoshenghao = "百事可乐";
+	String kaoshenghao = "okokok";
+	session.setAttribute("testSession",kaoshenghao);
 %>
         
         
@@ -56,7 +57,7 @@ String kaoshenghao = "百事可乐";
 		</fieldset>
         
         <h1></h1>
-        <form action="add" method="post" align="center" >     
+        <form action="hadchoose_outServlet" method="post" align="center" >     
     	<input type="submit" style="width:110px; height:35px "value="查看已报考科目" />   
     </form>
     

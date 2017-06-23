@@ -44,7 +44,7 @@ public class inServlet1 extends HttpServlet {
      	String email = request.getParameter("email");//email
      	String youbian = request.getParameter("post");//邮编
      	
-
+     	String kaoshenghao = (String) request.getSession().getAttribute("testSession");//考生号
      	/*
      	 * 
      	 * 
@@ -52,9 +52,9 @@ public class inServlet1 extends HttpServlet {
      	 * 
      	 * 
      	 * */
+     
      	
-     	
-     	request.getRequestDispatcher("choose.jsp").forward(request, response);//下一个页面的跳转
+     	request.getRequestDispatcher("fill_in_success.jsp").forward(request, response);//下一个页面的跳转
 	}
 
 	/**

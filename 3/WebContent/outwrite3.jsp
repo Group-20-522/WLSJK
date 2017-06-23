@@ -12,9 +12,7 @@
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
-    <!-- 
-    <link rel="stylesheet" type="text/css" href="index.css"> 
-    -->  
+
       
     
   </head>  
@@ -26,6 +24,7 @@
    
  <%  
 	String name = (String)request.getAttribute("name");
+ String kaoshenghao = (String)request.getAttribute("kaoshenghao");
  	String sex = (String)request.getAttribute("sex");
  	String maritalstatus = (String)request.getAttribute("maritalstatus");
 	String chusheng = (String)request.getAttribute("year") + "年" +  (String)request.getAttribute("month") + "月" +  (String)request.getAttribute("day") + "日";
@@ -44,7 +43,7 @@
   
   <div id="hd_cnt">
 <div class="list_hdcnt">
- <form id="add_user" name="add_user" action="login.jsp" method="post">
+ <form id="add_user" name="add_user" action="hadchoose.jsp" method="post">
 			  <table width="100%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
                 <tbody>
                
@@ -57,6 +56,11 @@
                     <td align="left" width="300" bgcolor="#FFFFFF" height="27"><%=name %></td>
                  </tr>
 				          
+				          
+				       <tr>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">考　　号：</td>
+                    <td align="left" width="300" bgcolor="#FFFFFF" height="27"><%=kaoshenghao %></td>
+                 </tr>   
                  
                   
                   <tr>

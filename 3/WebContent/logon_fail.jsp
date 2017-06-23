@@ -36,7 +36,7 @@
 	</div>
 	
 	<div class="loginwarrp">
-		<div class="logo"><span id="layer">3</span>秒后返回注册页面。</div>
+		<div class="logo"><span id="layer">3</span>秒后返回注册页面</div>
         <%
 		//转向语句
 		response.setHeader("Refresh", "3;URL=logon.jsp");

@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="loginwarrp">
 		<div class="logo">考 生 登 陆</div>
         <div class="login_form">
-			<form id="Login" name="Login" method="post" onsubmit="return validate()" action="choose.jsp">
+			<form id="Login" name="Login" method="post" onsubmit="return validate()" action="login_inServlet">
 				<li class="login-item">
 					<span>身份证号：</span>
 					<input type="text" id="username" name="Username" class="login_input" >

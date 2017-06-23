@@ -69,8 +69,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>  
     
   <body>  
-  <%
+<%
 	String kaoshenghao = request.getParameter("kaoshenghao");
+  	session.setAttribute("testSession",kaoshenghao);
 %>
 
   
