@@ -59,18 +59,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<form id="Login" name="myform" method="post" onsubmit="return validate()" action="logon_inServlet">
 				<li class="login-item">
 					<span>身份证号：</span>
-					<input type="text" id="username" name="Username" class="login_input" >
+					<input type="text" id="username" name="Username" class="login_input" maxlength='18' onkeyup="value=value.replace(/^[a-zA-Z]+\D*|^\d{0,16}[a-zA-Z]+|[^0-9Xx]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
                                         <span id="count-msg" class="error"></span>
 				</li>
 				<li class="login-item">
 					<span>密　　码：</span>
-					<input type="password" id="password" name="NPassword" class="login_input" >
+					<input type="password" id="password" name="NPassword" class="login_input" maxlength='20'>
                                         <span id="password-msg" class="error"></span>
 				</li>
 				
 				<li class="login-item">
 					<span>确认密码：</span>
-					<input type="password" id="password" name="NBPassword" class="login_input" >
+					<input type="password" id="password" name="NBPassword" class="login_input" maxlength='20'>
                                         <span id="password-msg" class="error"></span>
 				</li>
             

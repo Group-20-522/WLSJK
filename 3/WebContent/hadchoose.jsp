@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
         <h1></h1>
      <form action="choose.jsp" method="post" align="center" >     
-    	<input type="submit" style="width:110px; height:35px "value="返 回" />   
+    	<input type="submit" style="width:110px; height:35px "value="返回报考页面" />   
     </form>
     
   </body>  

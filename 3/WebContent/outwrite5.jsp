@@ -71,7 +71,7 @@ newobj.focus();
   
   <div id="hd_cnt">
 <div class="list_hdcnt">
- <form id="add_user" name="add_user" action="hadchoose.jsp" method="post">
+ <form id="add_user" name="add_user" action="update_inServlet5" method="post">
 			  <table width="100%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
                 <tbody>
                
@@ -127,11 +127,11 @@ newobj.focus();
                   
                   
                    <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">毕业院校：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"  ondblclick="ShowElement(this)"><%=schooladdress %></td>
-                    <td align="center" width="104" bgcolor="GRAY" height="27">属性双击可修改</td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">毕业院校：</td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"  ondblclick="ShowElement(this)"><%=schooladdress %></td>
                   </tr>
                   
+                 
                   <tr>
                     <td align="right" width="104" bgcolor="#FFFFFF" height="27">专　　业：</td>
                     <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=zhuanye %></td>
@@ -148,7 +148,7 @@ newobj.focus();
                   <tr>
                     <td align="right" width="104" bgcolor="#d4d8e2" height="27">工作年限：</td>
                     <td align="left" width="104" bgcolor="#d4d8e2" height="27"  ondblclick="ShowElement(this)" title="sdsa"><%=dotime %></td>
-                  <td align="center" width="104" bgcolor="#d4d8e2" height="27">属性双击可修改</td>
+
                   </tr>
                   
                   
@@ -160,36 +160,36 @@ newobj.focus();
                   
                   
                 <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">所在岗位的职务：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27" ondblclick="ShowElement(this)"><%=zhiwu %></td>
-                  <td align="center" width="104" bgcolor="GRAY" height="27">属性双击可修改</td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">所在岗位的职务：</td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=zhiwu %></td>
+     
                   </tr>
                   
                   
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">家庭住址：</td>
-					<td align="left" width="104" bgcolor="#FFFFFF" height="27" ondblclick="ShowElement(this)"><%=address %></td>
-					<td align="center" width="104" bgcolor="GRAY" height="27">属性双击可修改</td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">家庭住址：</td>
+					<td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=address %></td>
+				
                   </tr>
                 
                   <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">个人电话：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27" ondblclick="ShowElement(this)"><%=phone %></td>
-                    <td align="center" width="104" bgcolor="GRAY" height="27">属性双击可修改</td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">个人电话：</td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=phone %></td>
+                  
                   </tr>
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">Email：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27" ondblclick="ShowElement(this)"><%=email %></td>
-                    <td align="center" width="104" bgcolor="GRAY" height="27">属性双击可修改</td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">Email：</td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=email %></td>
+                   
                   </tr>
                   
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">邮　　编：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27" ondblclick="ShowElement(this)"><%=youbian %></td>
-                    <td align="center" width="104" bgcolor="GRAY" height="27">属性双击可修改</td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">邮　　编：</td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=youbian %></td>
+                
                   </tr>
                   
              
@@ -197,8 +197,9 @@ newobj.focus();
                     <td height="16" colspan="3" bgcolor="#FFFFFF" style="BORDER-TOP-WIDTH: 1px; BORDER-RIGHT: #000080 1px solid; BORDER-LEFT: #000080 1px solid; BORDER-BOTTOM: #000080 1px solid">
                     <p align="center">
                     
-						<input name="submit" type="submit" style="COLOR: #000000" value="保 存">
-                     	<input type="button" style="COLOR: #000000" value="返 回" onclick="window.location.href='write4.jsp';"/>
+						<!input name="submit" type="submit" style="COLOR: #000000" value="修 改 保 存">
+						<input type="button" style="COLOR: #000000" value="修 改 保 存" onclick="window.location.href='choose.jsp';"/>
+                     	<input type="button" style="COLOR: #000000" value="返回报考页面" onclick="window.location.href='choose.jsp';"/>
                  
                     </p></td>
                   </tr>

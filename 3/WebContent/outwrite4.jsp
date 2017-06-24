@@ -125,7 +125,8 @@
                   <tr valign="center" bgcolor="#009966">
                     <td height="16" colspan="3" bgcolor="#FFFFFF" style="BORDER-TOP-WIDTH: 1px; BORDER-RIGHT: #000080 1px solid; BORDER-LEFT: #000080 1px solid; BORDER-BOTTOM: #000080 1px solid"><p align="center">
 
-                      <input name="submit" type="submit" style="COLOR: #000000" value="返 回">
+                     <input name="submit" type="submit" style="COLOR: #000000" value="修 改 保 存">
+                     	<input type="button" style="COLOR: #000000" value="返回报考页面" onclick="window.location.href='choose.jsp';"/>
                  
                      
                     </p></td>

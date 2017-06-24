@@ -40,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<tr>
 				<td>1</td><td>英 语 四 级 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write1.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td>
 				</tr>
-				<tr>
+				
 				<tr>
 				<td>2</td><td>超 级 机 构 地 质 专 业 研 究 生 考 试</td><td></td><td></td><td></td><td></td><td></td><td><a href="write3.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td>
 				</tr>
