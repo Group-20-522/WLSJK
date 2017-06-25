@@ -1,13 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>  
-<%  
-String path = request.getContextPath();  
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
-%>  
+ 
   
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
 <html>  
   <head>  
-    <base href="<%=basePath%>">  
+ 
       
     <title>考试报名系统</title>  
     <meta http-equiv="pragma" content="no-cache">  
@@ -27,7 +24,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
 <%  
 	String kaoshenghao = (String)request.getAttribute("kaoshenghao");
-	
 %>
         
         

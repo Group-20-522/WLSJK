@@ -1,4 +1,4 @@
-package get;
+package update;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class update_inServlet5
+ * Servlet implementation class update_inServlet4
  */
-@WebServlet("/update_inServlet5")
-public class update_inServlet5 extends HttpServlet {
+@WebServlet("/update_inServlet4")
+public class update_inServlet4 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public update_inServlet5() {
+    public update_inServlet4() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,21 +28,18 @@ public class update_inServlet5 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-	
+		request.setCharacterEncoding("UTF-8");
+
+     	String schooladdress = request.getParameter("schooladdress");// 毕业院校
      	
-    
-   
- 
-     	//String schooladdress = request.getParameter("schooladdress");// 毕业院校
+     	
+     	String address = (String)request.getParameter("address");//家庭住址
+     	String phone = request.getParameter("phone");//个人号码
+     	String email = request.getParameter("email");//email
+     	String youbian = request.getParameter("post");//邮编
+    	String kaoshenghao = (String) request.getSession().getAttribute("kaoshenghao");//考生号
      
-     	//String dotime = request.getParameter("dotime");//工作年限
-     	//String zhiwu = request.getParameter("zhiwu");//所在岗位职务
-     	String address = request.getParameter("address");//家庭住址
-     	//String phone = request.getParameter("grdh");//个人号码
-     	//String email = request.getParameter("email");//email
-     	//String youbian = request.getParameter("post");//邮编
-     	//String kaoshenghao = request.getParameter("kaoshenghao");//考生号
-     	System.out.println(address);
+     
      	
      	/*
      	 * 
@@ -55,7 +52,7 @@ public class update_inServlet5 extends HttpServlet {
      	
      	
      	
-		
+    	request.setAttribute("kaoshenghao",kaoshenghao);
 		request.getRequestDispatcher("save_success.jsp").forward(request, response);//下一个页面的跳转
 	}
 

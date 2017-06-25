@@ -1,4 +1,4 @@
-package get;
+package update;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class login_inServlet
+ * Servlet implementation class update_inServlet5
  */
-@WebServlet("/login_inServlet")
-public class login_inServlet extends HttpServlet {
+@WebServlet("/update_inServlet5")
+public class update_inServlet5 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public login_inServlet() {
+    public update_inServlet5() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,41 +27,33 @@ public class login_inServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		/*登录*/
-		request.setCharacterEncoding("UTF-8");
 		
-		String id = request.getParameter("Username");//身份证号
-     	String password = request.getParameter("NPassword");//密码
-     	String kaoshenghao = "java";
+		request.setCharacterEncoding("UTF-8");
+
+     	String schooladdress = request.getParameter("schooladdress");// 毕业院校
+     	String dotime = request.getParameter("dotime");//工作年限
+     	String zhiwu = request.getParameter("zhiwu");//所在岗位职务
+     	String address = (String)request.getParameter("address");//家庭住址
+     	String phone = request.getParameter("grdh");//个人号码
+     	String email = request.getParameter("email");//email
+     	String youbian = request.getParameter("post");//邮编
+     	String kaoshenghao = (String) request.getSession().getAttribute("kaoshenghao");//考生号
+     
+     	System.out.println("考生号"+kaoshenghao);
+     	
      	/*
      	 * 
-     	 * 查数据库看看有没有这个人
      	 * 
+     	 * 此部分做数据库连接，录入更新信息等
      	 * 
      	 * 
      	 * */
      	
      	
-     	/*
-     	if(查有此人)
-     	{
-     		
-     		
-     		 //入库拿考生号 kaoshenghao=?
-     		
      	
-			request.setAttribute("kaoshenghao",kaoshenghao);
-     		request.getRequestDispatcher("choose.jsp").forward(request, response);
-     		
-     	}
-     	else
-     	{
-     		request.getRequestDispatcher("login_fail.jsp").forward(request, response);
-     	}
-		*/
      	
      	request.setAttribute("kaoshenghao",kaoshenghao);
- 		request.getRequestDispatcher("whochoose").forward(request, response);
+		request.getRequestDispatcher("save_success.jsp").forward(request, response);//下一个页面的跳转
 	}
 
 	/**

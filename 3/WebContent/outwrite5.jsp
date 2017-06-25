@@ -12,27 +12,10 @@
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
- 
-      
-<script type="text/javascript">
-function ShowElement(element)
-{
-var oldhtml = element.innerHTML;
-var newobj = document.createElement('input');
-//创建新的input元素
-newobj.type = 'text';
-newobj.value = oldhtml;
-//为新增元素添加类型
-newobj.onblur = function(){
-element.innerHTML = this.value == oldhtml ? oldhtml : this.value;
 
-//当触发时判断新增元素值是否为空，为空则不修改，并返回原有值 
-}
-element.innerHTML = ' ';
-element.appendChild(newobj);
-newobj.focus();
-}
-</script>
+	<link rel="stylesheet" href="login.css" />
+      
+
 
 
   </head>  
@@ -67,12 +50,14 @@ newobj.focus();
  	String phone = (String)request.getAttribute("phone");
  	String email = (String)request.getAttribute("email");
  	String youbian = (String)request.getAttribute("youbian");
+ 	session.setAttribute("kaoshenghao",kaoshenghao);
+ 	
 %> 
   
   <div id="hd_cnt">
 <div class="list_hdcnt">
  <form id="add_user" name="add_user" action="update_inServlet5" method="post">
-			  <table width="100%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
+			  <table width="85%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
                 <tbody>
                
                     <tr class="TDtop">
@@ -85,8 +70,8 @@ newobj.focus();
                  </tr>
                  
                       <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">考　　号：</td>
-                    <td align="left" width="300" bgcolor="#FFFFFF" height="27"><%=kaoshenghao %></td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">考　　号：</td>
+                    <td align="left" width="300" bgcolor="#d4d8e2" height="27"><%=kaoshenghao %></td>
                  </tr>   
 				          
                  
@@ -99,8 +84,8 @@ newobj.focus();
     
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">出生日期：</td>
-					<td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=chusheng %></td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">出生日期：</td>
+					<td align="left" width="104" bgcolor="#d4d8e2" height="27"><%=chusheng %></td>
                    
                   </tr>
                   
@@ -111,8 +96,8 @@ newobj.focus();
                   </tr>
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">民　　族：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=minzu %></td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">民　　族：</td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"><%=minzu %></td>
                   </tr>
                   
                   <tr>
@@ -121,20 +106,22 @@ newobj.focus();
                   </tr>
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">学　　历：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=xueli %></td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">学　　历：</td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"><%=xueli %></td>
                   </tr>
                   
                   
                    <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">毕业院校：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"  ondblclick="ShowElement(this)"><%=schooladdress %></td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">毕业院校：</td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27">
+                    <input name="schooladdress" class="login_username" id="schooladdress" value="<%=schooladdress %>">
+                    </td>
                   </tr>
                   
                  
                   <tr>
-                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">专　　业：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=zhuanye %></td>
+                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">专　　业：</td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"><%=zhuanye %></td>
                   
                   </tr>
                   
@@ -147,7 +134,9 @@ newobj.focus();
                   
                   <tr>
                     <td align="right" width="104" bgcolor="#d4d8e2" height="27">工作年限：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"  ondblclick="ShowElement(this)" title="sdsa"><%=dotime %></td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" >
+                    <input style="background-color:#d4d8e2" name="dotime" class="login_username" id="dotime" value="<%=dotime %>">
+                    </td>
 
                   </tr>
                   
@@ -161,34 +150,44 @@ newobj.focus();
                   
                 <tr>
                     <td align="right" width="104" bgcolor="#d4d8e2" height="27">所在岗位的职务：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=zhiwu %></td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" >
+                    <input style="background-color:#d4d8e2" name="zhiwu" class="login_username" id="zhiwu" value="<%=zhiwu %>">
+                    </td>
      
                   </tr>
                   
                   
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">家庭住址：</td>
-					<td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=address %></td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">家庭住址：</td>
+					<td align="left" width="104" bgcolor="#FFFFFF" height="27" >
+					<input name="address" class="login_username" id="address" value="<%=address %>">
+					</td>
 				
                   </tr>
                 
                   <tr>
                     <td align="right" width="104" bgcolor="#d4d8e2" height="27">个人电话：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=phone %></td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27">
+                    <input style="background-color:#d4d8e2" name="grdh" class="login_username" id="phone" value="<%=phone %>">
+                    </td>
                   
                   </tr>
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">Email：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=email %></td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">Email：</td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27" >
+                    <input name="email" class="login_username" id="email" value="<%=email %>">
+                    </td>
                    
                   </tr>
                   
                   
                   <tr>
                     <td align="right" width="104" bgcolor="#d4d8e2" height="27">邮　　编：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" ondblclick="ShowElement(this)"><%=youbian %></td>
+                    <td align="left" width="104" bgcolor="#d4d8e2" height="27" >
+                    <input style="background-color:#d4d8e2" name="post" class="login_username" id="youbian" value="<%=youbian %>">
+                    </td>
                 
                   </tr>
                   
@@ -197,9 +196,10 @@ newobj.focus();
                     <td height="16" colspan="3" bgcolor="#FFFFFF" style="BORDER-TOP-WIDTH: 1px; BORDER-RIGHT: #000080 1px solid; BORDER-LEFT: #000080 1px solid; BORDER-BOTTOM: #000080 1px solid">
                     <p align="center">
                     
-						<!input name="submit" type="submit" style="COLOR: #000000" value="修 改 保 存">
-						<input type="button" style="COLOR: #000000" value="修 改 保 存" onclick="window.location.href='choose.jsp';"/>
-                     	<input type="button" style="COLOR: #000000" value="返回报考页面" onclick="window.location.href='choose.jsp';"/>
+                
+						
+						<input name="submit" type="submit" style="COLOR: #000000" value="修 改 保 存">
+                     	<input type="button" style="COLOR: #000000" value="返回报考页面" onclick="window.location.href='whochoose?kaoshenghao=<%=kaoshenghao%>';"/>
                  
                     </p></td>
                   </tr>

@@ -71,7 +71,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>  
 <%
 	String kaoshenghao = request.getParameter("kaoshenghao");
-  	session.setAttribute("testSession",kaoshenghao);
+	//String kaoshenghao = "write1";
+  	session.setAttribute("kaoshenghao",kaoshenghao);
 %>
 
   
@@ -84,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="list_hdcnt">
  <form id="add_user" name="add_user" action="inServlet1" method="post"  onsubmit="return validate()">
 
-			  <table width="100%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
+			  <table width="85%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
                 <tbody>
                
                     <tr class="TDtop">

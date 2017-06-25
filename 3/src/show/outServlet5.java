@@ -55,7 +55,7 @@ public class outServlet5 extends HttpServlet {
      	String email = "313804866@qq.com";
      	String youbian = "523000";
      	
-     	
+     	System.out.println("考生号"+kaoshenghao);
      	
      	/*
      	 * 

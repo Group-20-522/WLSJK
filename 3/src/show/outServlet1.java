@@ -42,13 +42,13 @@ public class outServlet1 extends HttpServlet {
      	String minzu = "汉";
      	String jiguan = "广东";
      	String xueli = "本科";
-     	String school = "中国地质大学（武汉）";
+     	String schooladdress = "中国地质大学（武汉）";
      	String address = "佛山顺德区";
      	String phone = "13016467633";
      	String email = "313804866@qq.com";
      	String youbian = "523000";
      	
-     	
+     	System.out.println("考生号"+kaoshenghao);
      	/*
      	 * 已知kaoshenghao考生号
      	 * 数据库拿信息
@@ -71,7 +71,7 @@ public class outServlet1 extends HttpServlet {
         request.setAttribute("minzu",minzu);
         request.setAttribute("jiguan",jiguan);
         request.setAttribute("xueli",xueli);
-        request.setAttribute("school",school);
+        request.setAttribute("schooladdress",schooladdress);
         request.setAttribute("address",address);
         request.setAttribute("phone",phone);
         request.setAttribute("email",email);

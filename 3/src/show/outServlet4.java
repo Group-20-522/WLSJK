@@ -50,7 +50,7 @@ public class outServlet4 extends HttpServlet {
      	String youbian = "523000";
      	
      	
-     	
+     	System.out.println("考生号"+kaoshenghao);
      	/*
      	 * 
      	 * 数据库拿信息

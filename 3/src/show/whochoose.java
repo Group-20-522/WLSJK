@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class hadchoose_outServlet
+ * Servlet implementation class whochoose
  */
-@WebServlet("/hadchoose_outServlet")
-public class hadchoose_outServlet extends HttpServlet {
+@WebServlet("/whochoose")
+public class whochoose extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public hadchoose_outServlet() {
+    public whochoose() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,20 +29,37 @@ public class hadchoose_outServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		
-		String kaoshenghao = (String) request.getSession().getAttribute("kaoshenghao");//考生号
-	
+		String kaoshenghao = null;
+		String kaoshenghao1 = null;
+		String kaoshenghao2 = null;
+		
+		kaoshenghao = (String)request.getAttribute("kaoshenghao");//java接收
+		kaoshenghao1 = request.getParameter("kaoshenghao");//jsp接收
+		kaoshenghao2 = (String) request.getSession().getAttribute("kaoshenghao");//java接收
+		
+		if(kaoshenghao == null)
+		{
+			kaoshenghao = kaoshenghao1;
+		}
+		if(kaoshenghao == null)
+		{
+			kaoshenghao = kaoshenghao2;
+		}
+		
+		
 		request.setAttribute("kaoshenghao",kaoshenghao);
-		System.out.println("考生号"+kaoshenghao);
+		System.out.println("考生号="+kaoshenghao);
 		/*
 		 * 
 		 * 连接数据库，利用考生号查看已经报考科目
 		 * 需要知道已报考科目数目number；
-		 * 知道具体科目号及科目名；
+		 * 知道具体科目号；
 		 * 
 		 * */
 		
-		RequestDispatcher rd = request.getRequestDispatcher("hadchoose.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("choose.jsp");
 		int number = 3 ;
 		request.setAttribute("number",number);
         
@@ -50,13 +67,11 @@ public class hadchoose_outServlet extends HttpServlet {
 		{
 		
 			request.setAttribute("subjectnumber"+i,i+3);
-			String subjectname = "apple"+i+3;
-			request.setAttribute("subjectname"+i,subjectname);
+			
 		}
 		
 		
 		rd.forward(request,response);
-		
 	}
 
 	/**
