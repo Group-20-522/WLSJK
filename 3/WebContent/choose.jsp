@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <hr/>
       
 <%  
+<<<<<<< HEAD
 	String kaoshenghao = (String)request.getAttribute("kaoshenghao");//whochoose接收
 	
 	session.setAttribute("kaoshenghao",kaoshenghao);
@@ -37,6 +38,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	int d = (int)request.getAttribute("subjectnumber4");
 	
 	
+=======
+	String kaoshenghao = (String)request.getAttribute("kaoshenghao");
+	//String //kaoshenghao = "okokok";
+	session.setAttribute("testSession",kaoshenghao);
+>>>>>>> origin/master
 %>
         
         

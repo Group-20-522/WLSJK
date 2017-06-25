@@ -31,7 +31,11 @@
  	String minzu = (String)request.getAttribute("minzu");
  	String jiguan = (String)request.getAttribute("jiguan");
  	String xueli = (String)request.getAttribute("xueli");
+<<<<<<< HEAD
  	String schooladdress = (String)request.getAttribute("schooladdress");
+=======
+ 	String school = (String)request.getAttribute("schooladdress");
+>>>>>>> origin/master
  	String address = (String)request.getAttribute("address");
  	String phone = (String)request.getAttribute("phone");
  	String email = (String)request.getAttribute("email");

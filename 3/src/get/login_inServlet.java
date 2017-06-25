@@ -35,8 +35,8 @@ public class login_inServlet extends HttpServlet {
 		/*鐧诲綍*/
 		request.setCharacterEncoding("utf-8");		
 		String id = request.getParameter("Username");//韬唤璇佸彿
-     	String password = request.getParameter("NPassword");//瀵嗙爜
-//     	String id="341204199801310217";
+     	String password = request.getParameter("Password");//瀵嗙爜
+//     	String id="391204199801310217";
 //     	String password = "1234";
      	String kaoshenghao;
      	
@@ -65,6 +65,7 @@ public class login_inServlet extends HttpServlet {
 	     		  System.out.println(kaoshenghao);
 	     		  
 	     		  if(ispassword(id,password)) {	//判断密码正确
+	     			  System.out.println("okpassword");
 	     			  request.setAttribute("kaoshenghao",kaoshenghao);//传考生号
 	     			  request.getRequestDispatcher("whochoose").forward(request, response);//跳转到报考界面
 	     		  }else {	//错误
@@ -131,16 +132,18 @@ public class login_inServlet extends HttpServlet {
 	boolean ispassword(String id,String password) {
 		Connection connect = null;
 	 	Statement stmt = null;
+	 	System.out.println(id+"\t"+password);
 		try {
 			connect = DriverManager.getConnection(
 					DBconfig.db_url,DBconfig.db_user,DBconfig.db_password);
 		           //连接URL为   jdbc:mysql//服务器地址/数据库名  ，后面的2个参数分别是登陆用户名和密码
 	
-			System.out.println("Success connect Mysql server!");
+			System.out.println("Success connect Mysql server-password!");
 			stmt = connect.createStatement();
 			String sql = "select * from password where ID = '"+id+"'and password ='"+password+"';";	//查询表user
 			ResultSet rs = stmt.executeQuery(sql);
 			if(rs.next()) {
+				System.out.println("true");
 				return true;
 		      	}
 	     	  
