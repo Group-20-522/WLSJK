@@ -29,14 +29,6 @@
 </head>
 
 <body  onload="returnUrlByTime()">
-
-
-<%  
-	String kaoshenghao = (String)request.getAttribute("kaoshenghao");
-	//String kaoshenghao = "jsp";
-	
-%>
-
 	<div class="page">
 	<div class="loginwarrp">
 		<div class="logo">报考信息录入成功</div>
@@ -47,7 +39,7 @@
 		<div class="logo"><span id="layer">3</span>秒后返回报考页面</div>
         <%
 		//转向语句
-		response.setHeader("Refresh", "3;URL=whochoose?kaoshenghao="+kaoshenghao);
+		response.setHeader("Refresh", "3;URL=choose.jsp");
 	%>
 	</div>
 	

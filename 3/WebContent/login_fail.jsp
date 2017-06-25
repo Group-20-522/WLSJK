@@ -31,8 +31,8 @@
 <body  onload="returnUrlByTime()">
 	<div class="page">
 	<div class="loginwarrp">
-		<div class="logo">登录失败</div>
-        <div class="logo">身份证号或密码有误</div>
+		<div class="logo">登录失败，信息有误</div>
+        
 	</div>
 	
 	<div class="loginwarrp">

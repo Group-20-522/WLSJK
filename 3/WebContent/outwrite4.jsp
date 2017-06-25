@@ -35,16 +35,12 @@
  	String phone = (String)request.getAttribute("phone");
  	String email = (String)request.getAttribute("email");
  	String youbian = (String)request.getAttribute("youbian");
- 	
- 	
- 	session.setAttribute("kaoshenghao",kaoshenghao);
- 	
 %> 
   
   <div id="hd_cnt">
 <div class="list_hdcnt">
- <form id="add_user" name="add_user" action="update_inServlet4" method="post">
-			  <table width="85%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
+ <form id="add_user" name="add_user" action="hadchoose.jsp" method="post">
+			  <table width="100%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
                 <tbody>
                
                     <tr class="TDtop">
@@ -52,8 +48,8 @@
                     </tr>
              
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">姓　　名：</td>
-                    <td align="left" width="300" bgcolor="#d4d8e2" height="27"><%=name %></td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">姓　　名：</td>
+                    <td align="left" width="300" bgcolor="#FFFFFF" height="27"><%=name %></td>
                  </tr>
 				          
 				               <tr>
@@ -63,8 +59,8 @@
                  
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">性　　别：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"><%=sex %></td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">性　　别：</td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=sex %></td>
                   </tr>
                   
                   
@@ -77,8 +73,8 @@
                   
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">身份证号：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"><%=id %></td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">身份证号：</td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=id %></td>
                   </tr>
                   
                   <tr>
@@ -87,52 +83,42 @@
                   </tr>
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">籍　　贯：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"><%=jiguan %></td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">籍　　贯：</td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=jiguan %></td>
                   </tr>
                   
                   
                     
                    <tr>
                     <td align="right" width="104" bgcolor="#FFFFFF" height="27">学　　校：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27">
-                    <input style="background-color:#FFFFFF" name="schooladdress" class="login_username" id="schooladdress" value="<%=schooladdress %>">
-                    </td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=schooladdress %></td>
                   </tr>
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">报考级别：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27"><%=baokaojibie %></td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">报考级别：</td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=baokaojibie %></td>
                   </tr>
                   
                   
                   <tr>
                     <td align="right" width="104" bgcolor="#FFFFFF" height="27">家庭住址：</td>
-					<td align="left" width="104" bgcolor="#FFFFFF" height="27">
-					<input style="background-color:#FFFFFF" name="address" class="login_username" id="address" value="<%=address %>">
-					</td>
+					<td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=address %></td>
                   </tr>
                 
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">个人电话：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27">
-                    <input style="background-color:#d4d8e2" name="phone" class="login_username" id="phone" value="<%=phone %>">
-                    </td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">个人电话：</td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=phone %></td>
                   </tr>
                   
                   <tr>
                     <td align="right" width="104" bgcolor="#FFFFFF" height="27">Email：</td>
-                    <td align="left" width="104" bgcolor="#FFFFFF" height="27">
-                    <input style="background-color:#FFFFFF" name="email" class="login_username" id="email" value="<%=email %>">
-                    </td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=email %></td>
                   </tr>
                   
                   
                   <tr>
-                    <td align="right" width="104" bgcolor="#d4d8e2" height="27">邮　　编：</td>
-                    <td align="left" width="104" bgcolor="#d4d8e2" height="27">
-                    <input style="background-color:#d4d8e2" name="post" class="login_username" id="post" size="10" value="<%=youbian %>">
-                    </td>
+                    <td align="right" width="104" bgcolor="#FFFFFF" height="27">邮　　编：</td>
+                    <td align="left" width="104" bgcolor="#FFFFFF" height="27"><%=youbian %></td>
                   </tr>
                   
              
@@ -140,7 +126,7 @@
                     <td height="16" colspan="3" bgcolor="#FFFFFF" style="BORDER-TOP-WIDTH: 1px; BORDER-RIGHT: #000080 1px solid; BORDER-LEFT: #000080 1px solid; BORDER-BOTTOM: #000080 1px solid"><p align="center">
 
                      <input name="submit" type="submit" style="COLOR: #000000" value="修 改 保 存">
-                     	<input type="button" style="COLOR: #000000" value="返回报考页面" onclick="window.location.href='whochoose?kaoshenghao=<%=kaoshenghao%>';"/>
+                     	<input type="button" style="COLOR: #000000" value="返回报考页面" onclick="window.location.href='choose.jsp';"/>
                  
                      
                     </p></td>
