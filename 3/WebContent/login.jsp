@@ -2,6 +2,7 @@
 <%  
 String path = request.getContextPath();  
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
+//style = "background: url('images/bg-blue.png') repeat;"
 %>  
   
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
@@ -46,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>  
     
     
-  <body>  
+  <body >  
   <div class="page">
 	<div class="loginwarrp">
 		<div class="logo">考 生 登 陆</div>
