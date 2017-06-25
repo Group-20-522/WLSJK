@@ -28,7 +28,9 @@ public class Try1 {
 
 	        System.out.println("Success connect Mysql server!");
 	        stmt = connect.createStatement();
-	        String sql = "select * from user where ID = '341204199801310217'";//定义SQL语句
+	       String a = "341204199801310217";
+	       String b = "1234";
+	        String sql = "select * from password where ID = '"+a+"'and password ='"+b+"';";//定义SQL语句
 //	        boolean a = stmt.execute(sql);
 //	        if(a) System.out.println("yes");
 //	        if(!a) System.out.println("no");
@@ -36,11 +38,22 @@ public class Try1 {
 	        
 //	        if(rs.next()) System.out.println("yes");
 //	        else System.out.println("no");
-	        
-	  while (rs.next()) {
-	          System.out.println(rs.getString("ID")+"\t"+rs.getString("kaoshenghao"));
+	        String password;
+	        if(rs.next()) {
+	        	System.out.println("yes");
+	        	/*
+		  		password = rs.getString("password");
+		  		System.out.println(password);
+		  		if(password==a) System.out.println("yes");
+		  		else System.out.println("no");
+		  		System.out.println(a.length());
+		  		
+		  		System.out.println(password.length());
+//	          System.out.println(rs.getString("ID")+"\t"+rs.getString("kaoshenghao"));
+ */
 	        }
-	        
+	  		else System.out.println("no");
+
 	        if(stmt != null){
 				stmt.close();
 			}

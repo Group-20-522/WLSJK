@@ -1,11 +1,19 @@
 package get;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import db.DBHelper;
+import db.DBconfig;
 
 /**
  * Servlet implementation class inServlet5
@@ -35,7 +43,6 @@ public class inServlet5 extends HttpServlet {
     	String year = request.getParameter("year"); //年
     	String month = request.getParameter("month"); //月
     	String day = request.getParameter("day"); //日
-     	//String id = request.getParameter("sfid");//身份证号
      	String minzu = request.getParameter("minzu");//民族
      	String jiguan = request.getParameter("jiguan");//籍贯
      	String schooladdress = request.getParameter("schooladdress");// 毕业院校
@@ -58,7 +65,63 @@ public class inServlet5 extends HttpServlet {
      	 * 
      	 * 
      	 * */
-     	
+     	Connection connect = null;
+		PreparedStatement Statement = null;
+		DBHelper.DB_driver();
+		
+		try {
+			connect = DriverManager.getConnection(
+					DBconfig.db_url,DBconfig.db_user,DBconfig.db_password);
+		    String sql1 = "INSERT INTO kuaiji VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+			Statement=connect.prepareStatement(sql1);
+			
+			Statement.setInt(1,Integer.parseInt(kaoshenghao));
+			Statement.setString(2,name);
+			Statement.setString(3,sex);
+			Statement.setInt(4,Integer.parseInt(year));
+			Statement.setInt(5,Integer.parseInt(month));
+			Statement.setInt(6,Integer.parseInt(day));
+			Statement.setString(7,minzu);
+			Statement.setString(8,jiguan);
+			Statement.setString(9,schooladdress);
+			Statement.setString(10,zhuanye);
+			Statement.setString(11,xuelixingzhi);
+			Statement.setInt(12,Integer.parseInt(dotime));
+			Statement.setString(13,baokaojibie);
+			Statement.setString(14,zhiwu);
+			Statement.setString(15,address);
+			Statement.setString(16,phone);
+			Statement.setString(17,email);
+			Statement.setString(18,youbian);			
+			Statement.executeUpdate();
+			
+			System.out.println("insert into kuaiji success");
+			
+			if(connect != null) connect.close();
+			if(Statement != null) Statement.close();
+		}catch(SQLException e)
+		{
+		}
+		
+     	connect  = null;
+		Statement = null;
+		try {
+			connect = DriverManager.getConnection(
+					DBconfig.db_url,DBconfig.db_user,DBconfig.db_password);
+		    String sql2 = "INSERT INTO baokaokemu VALUES (?,?);";
+			Statement=connect.prepareStatement(sql2);
+			
+			Statement.setInt(1,Integer.parseInt(kaoshenghao));
+			Statement.setInt(2,5);
+			Statement.executeUpdate();
+			
+			System.out.println("insert into english4 success");
+			
+			if(connect != null) connect.close();
+			if(Statement != null) Statement.close();
+		}catch(SQLException e)
+		{
+		}
      	
      	
      	
