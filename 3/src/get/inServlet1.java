@@ -50,7 +50,7 @@ public class inServlet1 extends HttpServlet {
 //     	String phone = request.getParameter("grdh");//个人号码
 //     	String email = request.getParameter("email");//email
 //     	String youbian = request.getParameter("post");//邮编
-		String name = "汪天赐";
+		String name = "wtc";
      	String sex = "男";
     	String year = "1998";
     	String month = "1";
@@ -66,7 +66,7 @@ public class inServlet1 extends HttpServlet {
      	
      	
      	String kaoshenghao = (String) request.getSession().getAttribute("testSession");//考生号
-     	kaoshenghao = "1";
+     	kaoshenghao = "6";
      	/*
      	 * create table english4 (
 			1	kaoshenghao int primary key,

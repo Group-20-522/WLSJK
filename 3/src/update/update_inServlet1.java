@@ -1,11 +1,15 @@
 package update;
 
 import java.io.IOException;
+import java.sql.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import db.DBconfig;
 
 /**
  * Servlet implementation class update_inServlet1
@@ -39,13 +43,23 @@ public class update_inServlet1 extends HttpServlet {
     	String kaoshenghao = (String) request.getSession().getAttribute("kaoshenghao");//考生号
      
     	System.out.println("考生号"+kaoshenghao);
-     	/*
-     	 * 
-     	 * 
-     	 * 此部分做数据库连接，录入更新信息等
-     	 * 
-     	 * 
-     	 * */
+     	
+    	Connection connect = null;
+    	try {
+			connect = DriverManager.getConnection(DBconfig.db_url,DBconfig.db_user,DBconfig.db_password);
+			String sql2 = "update stu set name=? where number=?";
+			PreparedStatement pst = connect.prepareStatement(sql2);
+			pst.setString(1,"8888");
+			pst.setInt(2,198);
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	 
+    	
+    	
+    	
      	
      	
      	

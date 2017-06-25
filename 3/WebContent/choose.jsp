@@ -26,8 +26,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <hr/>
       
 <%  
-	//String kaoshenghao = (String)request.getAttribute("kaoshenghao");
-	String kaoshenghao = "okokok";
+	String kaoshenghao = (String)request.getAttribute("kaoshenghao");
+	//String //kaoshenghao = "okokok";
 	session.setAttribute("testSession",kaoshenghao);
 %>
         
