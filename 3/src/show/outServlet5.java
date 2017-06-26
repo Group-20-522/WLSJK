@@ -112,7 +112,7 @@ public class outServlet5 extends HttpServlet {
 	     		  jiguan = rs.getString("jiguan");
 	     		  schooladdress = rs.getString("school");
 	     		  zhuanye =  rs.getString("zhuanye");
-	     		  xuelixingzhi = rs.getString("xueli");
+	     		  xuelixingzhi = rs.getString("xueli");//////???????????????少了一个信息。这个信息也不对
 	     		  dotime = rs.getString("dotime");
 	     		  baokaojibie = rs.getString("baokaojibie");
 	     		  zhiwu = rs.getString("zhiwu");

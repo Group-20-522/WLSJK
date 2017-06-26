@@ -1,4 +1,4 @@
-package show;
+package manager;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,16 +17,16 @@ import db.DBHelper;
 import db.DBconfig;
 
 /**
- * Servlet implementation class hadchoose_outServlet
+ * Servlet implementation class find
  */
-@WebServlet("/hadchoose_outServlet")
-public class hadchoose_outServlet extends HttpServlet {
+@WebServlet("/find")
+public class find extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public hadchoose_outServlet() {
+    public find() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,36 +37,59 @@ public class hadchoose_outServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String kaoshenghao = (String) request.getSession().getAttribute("kaoshenghao");//考生号
-	
-		request.setAttribute("kaoshenghao",kaoshenghao);
-//		kaoshenghao = "1";
-		System.out.println("考生号"+kaoshenghao);
-		/*
-		 * 
-		 * 连接数据库，利用考生号查看已经报考科目
-		 * 需要知道已报考科目数目number；
-		 * ；
-		 * 
-		 * */
+		String kemuhao = request.getParameter("kemuhao");//科目号
+
 		DBHelper.DB_driver();
 		int number=0;
 		Connection connect = null;
      	Statement stmt = null;
-     	int[] kemuhao = new int[4];
-
+     	String kemuming = DBconfig.kemuming[Integer.parseInt(kemuhao)-1];
+     	
      	try {
      	      connect = DriverManager.getConnection(
      	          DBconfig.db_url,DBconfig.db_user,DBconfig.db_password);
 
      	      System.out.println("Success connect Mysql server!");
      	      stmt = connect.createStatement();
-     	      String sql = "select * from baokaokemu where kaoshenghao='"+kaoshenghao+"';";	//查询表user
-	     	  ResultSet rs = stmt.executeQuery(sql);	
+     	      
+     	      String sql1 = "select * from baokaokemu where kemuhao='"+kemuhao+"';";
+	     	  ResultSet rs = stmt.executeQuery(sql1);	
 	     	  while(rs.next()) {
-	     		  kemuhao[number] = Integer.parseInt(rs.getString("kemuhao"));
 	     		  number++;
      	      }
+//System.out.println(number);
+	     	  /*
+	     	   * 传kemuming
+	     	   * 传number
+	     	   * 
+	     	   * 
+	     	   * 
+	     	   */
+	     	 request.setAttribute("subjectname",kemuming);
+	     	 request.setAttribute("number",number);
+//System.out.println(DBconfig.kemubiao[Integer.parseInt(kemuhao)-1]);
+	     	  String sql2="select user.kaoshenghao,name,ID from "
+	     			+DBconfig.kemubiao[Integer.parseInt(kemuhao)-1]+",user,baokaokemu where "
+	     			+DBconfig.kemubiao[Integer.parseInt(kemuhao)-1]+".kaoshenghao=user.kaoshenghao=baokaokemu.kaoshenghao and kemuhao="
+	     			+kemuhao+";";
+	     	  rs = stmt.executeQuery(sql2);	
+	     	  int i = 0;
+	     	  while(rs.next()) {
+	     		  String kaoshenghao = rs.getString("kaoshenghao");
+	     		  String name = rs.getString("name");
+	     		  String ID = rs.getString("ID");
+	     		  request.setAttribute("id"+i,ID);
+	     		  request.setAttribute("name"+i,name);
+	     		  request.setAttribute("kaoshenghao"+i,kaoshenghao);
+	     		  ++i;
+	     		  /*
+	     		   * chuan 3
+	     		   * 
+	     		   * 
+	     		   */
+//System.out.println(kaoshenghao+"\t"+name+"\t"+ID);
+    	      }
+	     	  
 	     	  rs.close();
 	     	  if(stmt != null) stmt.close();
 	     	  if(connect != null) connect.close();
@@ -77,25 +100,8 @@ public class hadchoose_outServlet extends HttpServlet {
      	      e.printStackTrace();
      	    }
 		
-		
-		
-		
-		
-		RequestDispatcher rd = request.getRequestDispatcher("hadchoose.jsp");
-		
-		request.setAttribute("number",number);
-        
-		for(int i = 0 ; i < number ; ++i)
-		{
-			/*知道具体科目号及科目名*/
-			request.setAttribute("subjectnumber"+i,kemuhao[i]);
-//			String subjectname = "apple"+i+3;
-			request.setAttribute("subjectname"+i,DBconfig.kemuming[kemuhao[i]-1]);
-			System.out.println("科目号="+kemuhao[i]);
-		}
-		
-		
-		rd.forward(request,response);
+     	RequestDispatcher rd = request.getRequestDispatcher("man_show.jsp");
+     	rd.forward(request,response);
 		
 	}
 

@@ -38,7 +38,7 @@ public class outServlet1 extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String kaoshenghao = (String) request.getParameter("kaoshenghao");
-		kaoshenghao = "1";
+		//kaoshenghao = "1";
 		RequestDispatcher rd = request.getRequestDispatcher("outwrite1.jsp");
 //        String name = "闻迪桉";
 //     	String sex = "1";
@@ -70,7 +70,7 @@ public class outServlet1 extends HttpServlet {
 	   	String email = null;
 	   	String youbian = null;
 		
-//     	System.out.println("考生号"+kaoshenghao);
+     	System.out.println("呕吐1考生号"+kaoshenghao);
      	/*
      	 * 已知kaoshenghao考生号
      	 * 数据库拿信息
@@ -89,8 +89,10 @@ public class outServlet1 extends HttpServlet {
      	      String sql = "select english4.*,user.ID from english4,user where english4.kaoshenghao=user.kaoshenghao='"+kaoshenghao+"';";	//查询表user
 	     	  ResultSet rs = stmt.executeQuery(sql);	
 	     	  if(rs.next()) {
-	     		  name = rs.getString("english4.studentname");
+	     		  name = rs.getString("english4.name");
+	     		  System.out.println("name="+name);
 	     		  sex = rs.getString("english4.sex");
+	     		  System.out.println("sex="+sex);
 	     		  year = rs.getString("english4.year");
 	     		  month = rs.getString("english4.month");
 	     		  day = rs.getString("english4.day");
@@ -114,8 +116,8 @@ public class outServlet1 extends HttpServlet {
      	      e.printStackTrace();
      	    }
      	
-     	
-     	
+     	 System.out.println("name222="+name);
+     	 System.out.println("sex222="+sex);
      	
         request.setAttribute("name",name);//存值
         request.setAttribute("kaoshenghao",kaoshenghao);

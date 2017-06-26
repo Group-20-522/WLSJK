@@ -16,6 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
 
+	<link rel="stylesheet" href="login.css" />
       
     <script   Language="javaScript">   
 		function   validate()   
@@ -75,17 +76,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	session.setAttribute("kaoshenghao",kaoshenghao);
 %>
 
+  <h1 class="threed" align="center">公 共 报 考 系 统</h1>
   
-  <div id="blog-news">
-   <embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf" quality="high" bgcolor="#ffffff" width="160" height="70" name="honehoneclock" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
-   </div>
+  <!div id="blog-news">
+   <!embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf" quality="high" bgcolor="#ffffff" width="160" height="70" name="honehoneclock" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+   <!/div>
   
   
   <div id="hd_cnt">
 <div class="list_hdcnt">
  <form id="add_user" name="add_user" action="inServlet1" method="post"  onsubmit="return validate()">
 
-			  <table width="85%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
+			  <table width="65%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
                 <tbody>
                
                     <tr class="TDtop">
@@ -200,7 +202,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                           <option value="31">31</option>
                       </select>
                       日 <span class="样式4">*</span> </td>
-                   
+                    <td align="left" width="196" bgcolor="#FFFFFF" height="27"></td>
                   </tr>
                   
                   
@@ -252,6 +254,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <option value="澳门">澳门</option>
                     </select>
                         <span class="样式4">*</span> </td>
+                         <td align="left" width="196" bgcolor="#FFFFFF" height="27"></td>
                   </tr>
                   
                   <tr>
@@ -269,7 +272,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td align="right" width="104" bgcolor="#FFFFFF" height="27">学　　校：</td>
                     <td width="218" bgcolor="#FFFFFF" height="27"><input name="schooladdress" class="login_username" id="schooladdress">
                         <span class="样式4">*</span> </td>
-                  
+                   <td align="left" width="196" bgcolor="#FFFFFF" height="27"></td>
                   </tr>
                   
                   <tr>
@@ -297,7 +300,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <tr>
                     <td align="right" width="104" bgcolor="#FFFFFF" height="27">邮　　编：</td>
                     <td width="218" bgcolor="#FFFFFF" height="27"><input name="post" class="login_username" id="post" size="10">
-                 
+                  <td align="left" width="196" bgcolor="#FFFFFF" height="27"></td>
                   </tr>
                   
              
@@ -308,6 +311,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                       <input name="submit" type="submit" style="COLOR: #000000" value="提交">
                  
                       <input style="COLOR: #000000" type="reset" value="重填" name="reset">
+                      <input type="button" style="COLOR: #000000" value="返回" onclick="window.location.href='whochoose?kaoshenghao=<%=kaoshenghao%>';"/>
                     </p></td>
                   </tr>
                 

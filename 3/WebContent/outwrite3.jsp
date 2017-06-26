@@ -12,15 +12,18 @@
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
-
+	<link rel="stylesheet" href="login.css" />
       
     
   </head>  
     
   <body>  
-  <div id="blog-news">
-   <embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf" quality="high" bgcolor="#ffffff" width="160" height="70" name="honehoneclock" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
-   </div>
+ <h1 class="threed" align="center">公 共 报 考 系 统</h1>
+  
+  <!div id="blog-news">
+   <!embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf" quality="high" bgcolor="#ffffff" width="160" height="70" name="honehoneclock" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+   <!/div>
+  
    
  <%  
 	String name = (String)request.getAttribute("name");

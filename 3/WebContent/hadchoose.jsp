@@ -12,7 +12,7 @@
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
- 
+ <link rel="stylesheet" href="login.css" />
       
     
   </head>  
@@ -24,6 +24,7 @@
       
 <%  
 	String kaoshenghao = (String)request.getAttribute("kaoshenghao");
+
 %>
         
         
@@ -58,9 +59,7 @@
 		</fieldset>
         
         <h1></h1>
-     <form action="choose.jsp" method="post" align="center" >     
-    	<input type="submit" style="width:110px; height:35px "value="返回报考页面" />   
-    </form>
+     <input type="button" style="COLOR: #000000" value="返回报考页面" onclick="window.location.href='whochoose?kaoshenghao=<%=kaoshenghao%>';"/>
     
   </body>  
 </html>  

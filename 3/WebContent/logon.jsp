@@ -52,6 +52,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>  
     
   <body>  
+  
+  
+   </br>
+  </br>
+  <h1 class="threed" align="center">公 共 报 考 系 统</h1>
+  
+  
   <div class="page">
 	<div class="loginwarrp">
 		<div class="logo">考生账号注册</div>

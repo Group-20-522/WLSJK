@@ -12,15 +12,18 @@
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
-
+	<link rel="stylesheet" href="login.css" />
       
     
   </head>  
     
   <body>  
-  <div id="blog-news">
-   <embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf" quality="high" bgcolor="#ffffff" width="160" height="70" name="honehoneclock" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
-   </div>
+  <h1 class="threed" align="center">公 共 报 考 系 统</h1>
+  
+  <!div id="blog-news">
+   <!embed wmode="transparent" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf" quality="high" bgcolor="#ffffff" width="160" height="70" name="honehoneclock" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+   <!/div>
+  
    
  <%  
 	String name = (String)request.getAttribute("name");
@@ -31,11 +34,11 @@
  	String minzu = (String)request.getAttribute("minzu");
  	String jiguan = (String)request.getAttribute("jiguan");
  	String xueli = (String)request.getAttribute("xueli");
-<<<<<<< HEAD
+
  	String schooladdress = (String)request.getAttribute("schooladdress");
-=======
+
  	String school = (String)request.getAttribute("schooladdress");
->>>>>>> origin/master
+
  	String address = (String)request.getAttribute("address");
  	String phone = (String)request.getAttribute("phone");
  	String email = (String)request.getAttribute("email");
@@ -45,7 +48,7 @@
   <div id="hd_cnt">
 <div class="list_hdcnt">
  <form id="add_user" name="add_user" action="update_inServlet1" method="post">
-			  <table width="85%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
+			  <table width="65%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#BBBBBB">
                 <tbody>
                
                     <tr class="TDtop">

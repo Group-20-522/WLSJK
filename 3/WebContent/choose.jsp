@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
- 
+ <link rel="stylesheet" href="login.css" />
       
     
   </head>  
@@ -26,7 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <hr/>
       
 <%  
-<<<<<<< HEAD
 	String kaoshenghao = (String)request.getAttribute("kaoshenghao");//whochoose接收
 	
 	session.setAttribute("kaoshenghao",kaoshenghao);
@@ -37,12 +36,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	int c = (int)request.getAttribute("subjectnumber3");
 	int d = (int)request.getAttribute("subjectnumber4");
 	
-	
-=======
-	String kaoshenghao = (String)request.getAttribute("kaoshenghao");
-	//String //kaoshenghao = "okokok";
-	session.setAttribute("testSession",kaoshenghao);
->>>>>>> origin/master
+
+
+
 %>
         
         
@@ -53,27 +49,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td>序号</td><td>名称</td><td></td><td></td><td></td><td></td><td></td><td>操作</td></tr>
 				<tr>
 				<td>1</td><td>英 语 四 级 考 试</td><td></td><td></td><td></td><td></td><td></td>
-				<%if(a==1){ %><td><a href="write1.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td><%}else{ %>
+				<%if(a==0){ %><td><a href="write1.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td><%}else{ %>
 				<td><a>已报名</a></td> <% }%>
 				</tr>
 				
 				<tr>
 				<td>2</td><td>超 级 机 构 地 质 专 业 研 究 生 考 试</td><td></td><td></td><td></td><td></td><td></td>
-				<%if(b==1){ %><td><a href="write3.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td><%}else{ %>
+				<%if(b==0){ %><td><a href="write3.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td><%}else{ %>
 				<td><a>已报名</a></td> <% }%>
 				</tr>
 				
 				
 				<tr>
 				<td>3</td><td>全 国 计 算 机 等 级 考 试</td><td></td><td></td><td></td><td></td><td></td>
-				<%if(c==1){ %><td><a href="write4.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td><%}else{ %>
+				<%if(c==0){ %><td><a href="write4.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td><%}else{ %>
 				<td><a>已报名</a></td> <% }%>
 				</tr>
 				
 				
 				<tr>
 				<td>4</td><td>全 国 会 计 资 格 考 试</td><td></td><td></td><td></td><td></td><td></td>
-				<%if(d==1){ %><td><a href="write5.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td><%}else{ %>
+				<%if(d==0){ %><td><a href="write5.jsp?kaoshenghao=<%=kaoshenghao%>">报 名</a></td><%}else{ %>
 				<td><a>已报名</a></td> <% }%>
 				</tr>
 				<tr>

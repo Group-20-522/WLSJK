@@ -51,7 +51,7 @@ public class inServlet4 extends HttpServlet {
      	String phone = request.getParameter("grdh");//个人号码
      	String email = request.getParameter("email");//email
      	String youbian = request.getParameter("post");//邮编
-     	String kaoshenghao = (String) request.getSession().getAttribute("testSession");//考生号
+     	String kaoshenghao = (String) request.getSession().getAttribute("kaoshenghao");//考生号
 		
      	
      	/*

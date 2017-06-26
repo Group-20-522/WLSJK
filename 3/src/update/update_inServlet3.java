@@ -1,11 +1,19 @@
 package update;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import db.DBHelper;
+import db.DBconfig;
 
 /**
  * Servlet implementation class update_inServlet3
@@ -30,15 +38,14 @@ public class update_inServlet3 extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
      	String schooladdress = request.getParameter("schooladdress");// 毕业院校
-     	
-     	
      	String address = (String)request.getParameter("address");//家庭住址
      	String phone = request.getParameter("phone");//个人号码
      	String email = request.getParameter("email");//email
      	String youbian = request.getParameter("post");//邮编
+     	
     	String kaoshenghao = (String) request.getSession().getAttribute("kaoshenghao");//考生号
      
-     
+     	
      	
      	/*
      	 * 
@@ -47,6 +54,21 @@ public class update_inServlet3 extends HttpServlet {
      	 * 
      	 * 
      	 * */
+    	DBHelper.DB_driver();
+    	try {
+    		Connection connect = DriverManager.getConnection(DBconfig.db_url,DBconfig.db_user,DBconfig.db_password);
+    		String sql = "update dizhi set address=?,phone=?,email=?,youbian=?,school=? where kaoshenghao='"+kaoshenghao+"';";
+    		PreparedStatement pst = connect.prepareStatement(sql);
+    		pst.setString(1,address);
+    		pst.setString(2,phone);
+    		pst.setString(3,email);
+    		pst.setString(4,youbian);
+    		pst.setString(5,schooladdress);
+    		pst.executeUpdate();
+    	} catch (SQLException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
      	
      	
      	

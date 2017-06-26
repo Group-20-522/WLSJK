@@ -13,24 +13,48 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="reset.css" />
 	<link rel="stylesheet" href="login.css" />
-        
+         <script   Language="javaScript">   
+		function   validate()   
+		{   
+				if (Login.Username.value=="")   
+				{   
+						alert("用户名不能为空.");   
+						document.Login.Username.focus();   
+						return false  ;   
+				}  
+			
+				if (Login.Password.value=="")   
+				{   
+						alert("密码不能为空.");   
+						document.Login.Password.focus();   
+						return false  ;   
+				}   
+ 				return  true;   
+		}   
+		
+		
+		
+		
+  </script>    
 </head>
 <body>
-
+ </br>
+  </br>
+  <h1 class="threed" align="center">公 共 报 考 系 统</h1>
    
 <div class="page">
 	<div class="loginwarrp">
 		<div class="logo">管理员登陆</div>
         <div class="login_form">
-			<form id="Login" name="Login" method="post" onsubmit="" action="">
+			<form id="Login" name="Login" method="post" onsubmit="return validate()" action="man_choose.jsp">
 				<li class="login-item">
 					<span>用户名：</span>
-					<input type="text" id="username" name="UserName" class="login_input" >
+					<input type="text" id="username" name="Username" class="login_input" >
                                         <span id="count-msg" class="error"></span>
 				</li>
 				<li class="login-item">
 					<span>密　码：</span>
-					<input type="password" id="password" name="password" class="login_input" >
+					<input type="password" id="password" name="Password" class="login_input" >
                                         <span id="password-msg" class="error"></span>
 				</li>
             
