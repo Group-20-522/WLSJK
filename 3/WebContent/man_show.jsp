@@ -12,7 +12,11 @@
     <meta http-equiv="expires" content="0">      
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
     <meta http-equiv="description" content="This is my page">  
+<<<<<<< HEAD
 	<link rel="stylesheet" href="login.css" />
+=======
+
+>>>>>>> 2e65e33e735f9351eff592258fb50178b6d97800
       
     
   </head>  
@@ -24,7 +28,11 @@
    
  <%  
 	int number = (int)request.getAttribute("number");
+<<<<<<< HEAD
  	String subjectname = (String)request.getAttribute("subjectname");
+=======
+ 	String subjectname = (String)request.getAttribute("subjecrname");
+>>>>>>> 2e65e33e735f9351eff592258fb50178b6d97800
 %> 
   
   <div id="hd_cnt">
@@ -34,7 +42,11 @@
                 <tbody>
                
                     <tr class="TDtop">
+<<<<<<< HEAD
      <td height="25" colspan="8" align="center" bgcolor="#D3E3ED" class="bs_bg"><div align="center"><%=subjectname %></div></td>
+=======
+     <td height="25" colspan="8" align="center" bgcolor="#D3E3ED" class="bs_bg"><div align="center"><%=subjectname %>></div></td>
+>>>>>>> 2e65e33e735f9351eff592258fb50178b6d97800
                     </tr>
              
                   <tr>
@@ -48,7 +60,11 @@
                 	 String id = (String)request.getAttribute("id"+i);
                 	 String kaoshenghao = (String)request.getAttribute("kaoshenghao"+i);
                 	 String color = null;
+<<<<<<< HEAD
                 	 if(i%2 == 0)
+=======
+                	 if(i%2 == 1)
+>>>>>>> 2e65e33e735f9351eff592258fb50178b6d97800
                 	 {
                 		 color = "#FFFFFF";
                 	 }
@@ -59,8 +75,13 @@
                  %>
                  <tr>
                     <td align="center" width="300" bgcolor="<%=color %>" height="27"><%=kaoshenghao %></td>
+<<<<<<< HEAD
                     <td align="center" width="300" bgcolor="<%=color %>" height="27"><%=name %></td>
                     <td align="center" width="300" bgcolor="<%=color %>" height="27"><%=id %></td>
+=======
+                    <td align="center" width="300" bgcolor="#4767fe" height="27"><%=name %></td>
+                    <td align="center" width="300" bgcolor="#4767fe" height="27"><%=id %></td>
+>>>>>>> 2e65e33e735f9351eff592258fb50178b6d97800
                  </tr>
                   <% }%>
                   
